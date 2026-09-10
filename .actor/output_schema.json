@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Catalog audit report",
+  "properties": {
+    "report": {
+      "type": "string",
+      "title": "Audit report",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

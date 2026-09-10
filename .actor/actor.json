@@ -10,5 +10,9 @@
   "defaultMemoryMbytes": 256,
   "minMemoryMbytes": 256,
   "maxMemoryMbytes": 512,
-  "usesStandbyMode": false
+  "usesStandbyMode": false,
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
 }
