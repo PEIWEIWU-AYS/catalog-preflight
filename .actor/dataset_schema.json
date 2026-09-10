@@ -153,19 +153,37 @@
     "issues": {
       "title": "Issue details (up to 500)",
       "transformation": {
-        "unwind": [
+        "fields": [
           "issues"
         ],
-        "fields": [
-          "record",
-          "column",
-          "severity",
-          "code",
-          "message"
+        "unwind": [
+          "issues"
         ]
       },
       "display": {
-        "component": "table"
+        "component": "table",
+        "properties": {
+          "record": {
+            "label": "CSV record",
+            "format": "number"
+          },
+          "column": {
+            "label": "Column",
+            "format": "text"
+          },
+          "severity": {
+            "label": "Severity",
+            "format": "text"
+          },
+          "code": {
+            "label": "Issue code",
+            "format": "text"
+          },
+          "message": {
+            "label": "Explanation",
+            "format": "text"
+          }
+        }
       }
     }
   }
