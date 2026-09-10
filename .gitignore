@@ -1,0 +1,9 @@
+.venv/
+storage/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.log
+LAUNCH.md
+VALIDATION.md

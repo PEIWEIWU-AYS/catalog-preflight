@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "catalog-preflight",
+  "title": "Product CSV Validator — Duplicate SKUs & Price Checks",
+  "description": "Audit supplied product CSV for exact duplicate SKUs, missing fields and explicitly formatted prices. Returns a read-only JSON report.",
+  "version": "0.1",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "defaultMemoryMbytes": 256,
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 512,
+  "usesStandbyMode": false
+}

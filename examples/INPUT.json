@@ -1,0 +1,8 @@
+{
+  "csvText": "sku;name;price\n00123;Żółta lampa;12,50\n00123;Žlutá lampa;12.50\n00124;;19,90\n 00125 ;Modrá lampa;29,00\n",
+  "delimiter": ";",
+  "skuColumn": "sku",
+  "requiredColumns": ["sku", "name"],
+  "priceColumns": ["price"],
+  "decimalSeparator": ","
+}

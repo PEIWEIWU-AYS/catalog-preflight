@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "sourceSha256": "55d8932581be916e914853ac4eca98c2df09eca42c3d96a46d4f6ef765f3d677",
+  "rows": 4,
+  "columns": [
+    "sku",
+    "name",
+    "price"
+  ],
+  "passedConfiguredChecks": false,
+  "summary": {
+    "errors": 3,
+    "warnings": 1,
+    "affectedDataRecords": 3,
+    "issuesTotal": 4,
+    "issuesReturned": 4,
+    "issuesTruncated": false,
+    "byCode": {
+      "duplicate_sku": 1,
+      "invalid_price": 1,
+      "missing_value": 1,
+      "surrounding_whitespace": 1
+    }
+  },
+  "issues": [
+    {
+      "record": 3,
+      "column": "sku",
+      "code": "duplicate_sku",
+      "severity": "error",
+      "message": "Exact identifier first appears in record 2."
+    },
+    {
+      "record": 3,
+      "column": "price",
+      "code": "invalid_price",
+      "severity": "error",
+      "message": "Expected nonnegative digits with the configured decimal separator; no grouping or currency symbol."
+    },
+    {
+      "record": 4,
+      "column": "name",
+      "code": "missing_value",
+      "severity": "error",
+      "message": "Configured field is blank."
+    },
+    {
+      "record": 5,
+      "column": "sku",
+      "code": "surrounding_whitespace",
+      "severity": "warning",
+      "message": "Value has surrounding whitespace; unchanged."
+    }
+  ],
+  "scope": {
+    "readOnly": true,
+    "recordNumbering": "CSV records, header is 1; not physical lines",
+    "identifierComparison": "exact original text, case sensitive",
+    "decimalSeparator": ",",
+    "limitation": "Checks only configured fields. Does not certify any store import, tax, product truth, or barcode registration."
+  }
+}

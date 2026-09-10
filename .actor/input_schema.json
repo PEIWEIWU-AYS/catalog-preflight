@@ -1,0 +1,14 @@
+{
+  "title": "Catalog Preflight input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "csvText": {"title": "CSV content", "type": "string", "editor": "textarea", "description": "Paste supplied product data, maximum 5 MB UTF-8, 10000 records and 30 columns."},
+    "delimiter": {"title": "Delimiter", "type": "string", "editor": "select", "enum": [",", ";", "\t"], "enumTitles": ["Comma", "Semicolon", "Tab"], "default": ","},
+    "skuColumn": {"title": "SKU column", "type": "string", "editor": "textfield", "default": "sku"},
+    "requiredColumns": {"title": "Required columns", "type": "array", "editor": "stringList", "items": {"type": "string"}, "default": ["sku", "name"]},
+    "priceColumns": {"title": "Price columns", "type": "array", "editor": "stringList", "items": {"type": "string"}, "default": []},
+    "decimalSeparator": {"title": "Decimal separator", "type": "string", "editor": "select", "enum": [".", ","], "default": "."}
+  },
+  "required": ["csvText"]
+}
