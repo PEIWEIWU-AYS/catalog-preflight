@@ -3,12 +3,73 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "csvText": {"title": "CSV content", "type": "string", "editor": "textarea", "description": "Paste supplied product data, maximum 5 MB UTF-8, 10000 records and 30 columns."},
-    "delimiter": {"title": "Delimiter", "type": "string", "editor": "select", "enum": [",", ";", "\t"], "enumTitles": ["Comma", "Semicolon", "Tab"], "default": ","},
-    "skuColumn": {"title": "SKU column", "type": "string", "editor": "textfield", "default": "sku"},
-    "requiredColumns": {"title": "Required columns", "type": "array", "editor": "stringList", "items": {"type": "string"}, "default": ["sku", "name"]},
-    "priceColumns": {"title": "Price columns", "type": "array", "editor": "stringList", "items": {"type": "string"}, "default": []},
-    "decimalSeparator": {"title": "Decimal separator", "type": "string", "editor": "select", "enum": [".", ","], "default": "."}
+    "csvText": {
+      "title": "CSV content",
+      "type": "string",
+      "editor": "textarea",
+      "description": "Paste supplied product data, maximum 5 MB UTF-8, 10000 records and 30 columns.",
+      "prefill": "sku,name,price\n00123,Yellow lamp,12.50\n00123,Blue lamp,19.90\n"
+    },
+    "delimiter": {
+      "title": "Delimiter",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        ",",
+        ";",
+        "\t"
+      ],
+      "enumTitles": [
+        "Comma",
+        "Semicolon",
+        "Tab"
+      ],
+      "default": ",",
+      "description": "Select the actual CSV field separator. It is not inferred from the file."
+    },
+    "skuColumn": {
+      "title": "SKU column",
+      "type": "string",
+      "editor": "textfield",
+      "default": "sku",
+      "description": "Exact case-sensitive header containing the product identifier; leading zeros are preserved."
+    },
+    "requiredColumns": {
+      "title": "Required columns",
+      "type": "array",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "sku",
+        "name"
+      ],
+      "description": "Exact headers that must exist and contain a nonblank value in each data record."
+    },
+    "priceColumns": {
+      "title": "Price columns",
+      "type": "array",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Exact headers to check for nonnegative plain decimal prices. Selected prices must not be blank."
+    },
+    "decimalSeparator": {
+      "title": "Decimal separator",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        ".",
+        ","
+      ],
+      "default": ".",
+      "description": "Select the price decimal separator. Currency symbols and thousands separators are not accepted."
+    }
   },
-  "required": ["csvText"]
+  "required": [
+    "csvText"
+  ]
 }
